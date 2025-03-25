@@ -32,6 +32,18 @@ const handleAddTask = () => {
   taskItemContainer.appendChild(deleteItem);
 
   tasksContainer.appendChild(taskItemContainer);
+
+  inputElement.value = "";
+};
+
+const handleClick = (taskContent) => {
+  const tasks = tasksContainer.childNodes;
+
+  for (const task of tasks) {
+    if (task.firstChild.isSameNode(taskContent)) {
+      task.firschild.classList.toggle("completed");
+    }
+  }
 };
 
 const handleInputChange = () => {
